@@ -7,6 +7,7 @@ import firebase from 'firebase/app'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import VueClipboard from 'vue-clipboard2'
+import naver from 'vue-naver-maps';
 
 Vue.config.productionTip = false
 
@@ -14,6 +15,11 @@ Vue.use(VScrollLock)
 Vue.use(VueClipboard)
 Vue.component('Divider', Divider)
 Vue.component('Button', Button)
+Vue.use(naver, {
+  clientID: 'u81yhz5del',
+  useGovAPI: false, //공공 클라우드 API 사용 (선택)
+  subModules:'' // 서브모듈 (선택)
+});
 
 // use your firebase info
 var firebaseConfig = {
